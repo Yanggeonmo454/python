@@ -83,6 +83,7 @@ print(not a)
 a = "hello world"
 print(a in "H")
 
+
 num = 14
 a = num % 2
 
