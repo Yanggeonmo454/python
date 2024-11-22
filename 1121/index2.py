@@ -169,7 +169,7 @@ print(len(t4))
 
 print('c' in t4)
 """
-
+"""
 # set
 
 s1 = {1, 1, 1, 1, 1, 1, 2}
@@ -179,3 +179,37 @@ print(s1)
 s2 = ["안녕", "잘가", "Hi", "안녕"]
 
 print(set(s2))
+"""
+"""
+s1 = {1, 2, 3, 3, 4}
+
+print(s1)
+s1.add(5)
+print(s1)
+s1.update({6, 7, 8, 9, 10})
+print(s1)
+s1.remove(3)
+print(s1)
+s1.discard(9)
+print(s1)
+#remove는 없는 요소를 입력하면 에러, discard는 아무일도 일어나지 않는다.
+"""
+
+s1 = {1, 2, 3, 4, 5}
+s2 = {4, 5, 6, 7, 8}
+
+# 합집합
+s3 = s1 | s2
+print(s3)
+# s3 = s1.union(s2)
+
+# 교집합
+s3 = s1 & s2
+print(s3)
+# s3 = s1.intersection(s2)
+
+# 차집합
+s3 = s2 - s1
+print(s3)
+
+# s3 = s2.difference(s1)
