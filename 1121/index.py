@@ -147,7 +147,7 @@ print(f"[{b.lstrip()}]")
 print(f"[{b.strip()}]")
 """
 
-
+"""
 # print("1234".isnumeric())
 
 name = input("이름을 입력하세요.")
@@ -155,10 +155,11 @@ age = input("나이를 입력하세요.")
 
 print(f"안녕하세요! {name}님 ({age}세)")
 
-"""
+
 name = input("이름을 입력하세요.")
 year_b = int(input("태어난 년도를 입력하세요."))
 year_t = int(input("올해 년도를 입력하세요."))
 
 print(f"올해는{year_t}, {name}님의 나이는{year_t - year_b + 1}세 입니다.")
+
 """

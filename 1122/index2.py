@@ -93,7 +93,7 @@ if fruit in ["사과", "바나나", "복숭아"]:
     print(f"{fruit}는 과일에 포함되어 있습니다.")
 else:
     print("존재하지 않는 과일입니다.")
-    """
+
 
 fruit_cal = {
     "apple": 95,
@@ -108,3 +108,4 @@ if fruit in fruit_cal:
 
 else:
     print("존재하지 않는 과일입니다.")
+"""

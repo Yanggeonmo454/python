@@ -109,9 +109,10 @@ print(sum(numbers))
 scores = {"국어": 90, "수학": 80, "영어": 60}
 print(sum(scores.values()))
 
-"""
+
 names = ["Alice", "Bob", "Chrarlie", "David"]
 scores = [85, 90, 88, 95]
 zipped = (zip(names, scores))
 
 print(list(zipped))
+"""
