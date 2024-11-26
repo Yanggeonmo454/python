@@ -84,7 +84,7 @@ def times(nums):
 
 number = [2, 3, 6, 9]
 print(times(number))
-"""
+
 
 vending_machine = ['게토레이', '게토레이', '레쓰비', '레쓰비', '생수', '생수', '생수', '이프로']
 
@@ -145,3 +145,4 @@ while True:
 
     else:
         print("소비자 또는 주인을 입력하세요.")
+"""
