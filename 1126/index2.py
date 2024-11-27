@@ -1,3 +1,4 @@
+"""
 weather_data = [
     ["2024-11-20", "서울", 15.2, 0.0],
     ["2024-11-20", "부산", 18.4, 0.0],
@@ -9,7 +10,8 @@ weather_data = [
 
 
 while True:
-    print("[날씨 데이터 분석 프로그램]\n1.평균 기온 계산\n2.최고/최저 기온 찾기\n3.강수량 분석\n4.날씨 데이터 추가\n5.전체 데이터 출력\n6.종료")
+    print("\n[날씨 데이터 분석 프로그램]\n1.평균 기온 계산\n2.최고/최저 기온 찾기\n3.강수량 분석\n4.날씨 데이터 추가\n5.전체 데이터 출력\n6.종료")
+
     user_input = int(input("원하는 기능의 번호를 입력하세요."))
 
     if user_input == 1:
@@ -35,10 +37,11 @@ while True:
     elif user_input == 3:
         city = input("도시 이름을 입력하세요. (서울/부산) ")
         city_data = [data[3] for data in weather_data if data[1] == city]
+        rain_day = len(list(filter(lambda x: x > 0, city_data)))
 
         if city_data:
             print(f"{city}의 총 강수량: {sum(city_data)}mm")
-            print(f"{city}의 강수량이 있었던 날: {len(city_data)}일")
+            print(f"{city}의 강수량이 있었던 날: {(rain_day)}일")
         else:
             print(f"{city}에 대한 날씨 데이터가 없습니다.")
 
@@ -58,3 +61,4 @@ while True:
         break
     else:
         print("원하는 기능의 번호를 정확히 입력하세요.")
+"""
