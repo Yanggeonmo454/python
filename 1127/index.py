@@ -241,7 +241,7 @@ p1 = Person()
 p1.setname("홍길동")
 
 print(p1.getname())
-"""
+
 
 
 class Health:
@@ -253,20 +253,24 @@ class Health:
         self.__name = name
 
     def getname(self):
-        return self.__name
+        print(self.__name)
 
     def sethp(self, hp):
         self.__hp = hp
 
     def gethp(self):
-        return self.__hp
+        print(self.__hp)
 
     def exercise(self, hours):
         self.__hp += hours
+        if self.__hp > 100:
+            self.__hp = 100
         print(f"{hours}시간 동안 운동하다.")
 
     def drink_alcohol(self, cup):
         self.__hp -= cup
+        if self.__hp < 0:
+            self.__hp = 0
         print(f"술을 {cup}잔 마시다.")
 
     def show_status(self):
@@ -280,3 +284,39 @@ p1.sethp(100)
 p1.exercise(5)
 p1.drink_alcohol(2)
 p1.show_status()
+p1.gethp()
+"""
+
+# getter setter 데코레이터
+
+
+class Person:
+    def __init__(self, name, age):
+        self._name = name
+        self._age = age
+
+    # getter for name
+    @property
+    def name(self):
+        return self._name
+
+    # setter for name
+    @name.setter
+    def name(self, value):
+        self._name = value
+
+    # getter for age
+    @property
+    def age(self):
+        return self._age  # self._age로 접근
+
+    # setter for age
+    @age.setter
+    def age(self, value):
+        self._age = value
+
+
+# Person 객체 생성
+p1 = Person("홍길동", 25)
+print(p1.name)  # "홍길동" 출력
+print(p1.age)   # 25 출력
