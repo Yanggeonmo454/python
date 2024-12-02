@@ -16,6 +16,8 @@ finally:
 
 
 def divide(a, b):
+    if b == 0:
+        raise ZeroDivisionError("0으로 나눌수 없습니다.")
     return a / b
 
 
@@ -23,3 +25,6 @@ try:
     result = divide(10, 0)
 except ZeroDivisionError as e:
     print("예외발생", e)
+else:
+    with open("result.txt", "w", encoding="utf8") as file:
+        file.write(f"결과: {result}")
