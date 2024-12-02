@@ -192,5 +192,5 @@ class Kakaopay(PaymentSystem):
 pay = 50000
 kakao = Kakaopay()
 kakao.authenticate()
-kakao.process_payment(pay)
-kakao.payment_info(pay)
+kakao.process_payment()
+kakao.payment_info()
