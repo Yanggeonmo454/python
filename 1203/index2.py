@@ -62,11 +62,17 @@ print(zipped)
 from bs4 import BeautifulSoup
 import requests
 
-html_url = "https://finance.naver.com/marketindex/"
+html_url = "https://finance.naver.com/item/main.naver?code=000660"
 
 res = requests.get(html_url)
 
 soup = BeautifulSoup(res.text, "html.parser")
-data_div = soup.find('div', class_='market1')  # 'data' 클래스를 가진 div 찾기
 
-print(data_div)
+company = soup.select('.wrap_company h2 a')
+
+values = soup.select('.rate_info dd')
+
+print(f"회사: {company[0].text.strip()}")
+print(f"현재 시세: {values[0].text.strip()}")
+print(f"가격 변화: {values[1].text.strip()}")
+print(f"변동률: {values[2].text.strip()}")
