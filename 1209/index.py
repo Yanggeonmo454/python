@@ -44,15 +44,22 @@ s2 = pd.Series([5, 15, 25])
 # print(s1s2)
 
 
+import pandas as pd
+
 data = {
     'group': ['A', 'A', 'B', 'B', 'C'],
-    'value': [10, 20, 30, 40, 50]
+    'value': [10, 20, 30, 40, 50],
+    'value2': [5, 15, 25, 35, 45]
 }
 
 df = pd.DataFrame(data)
 
-# 그룹화 후 'value' 컬럼에 대해 합계를 구함
-# result = df.groupby('group')['value'].sum()
+# 그룹화 후 'value' 컬럼에는 'sum', 'value2' 컬럼에는 'mean'을 적용
+result = df.groupby('group').agg({
+    'value': ['sum', 'mean', 'max'],   # 'value'에는 sum, mean, max 적용
+    'value2': 'mean'                    # 'value2'에는 mean만 적용
+})
 
-result = df.groupby('group')['value'].agg(['sum', 'mean', 'max'])
 print(result)
+
+

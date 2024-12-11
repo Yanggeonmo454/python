@@ -9,7 +9,7 @@ df = pd.read_csv(file_name, encoding="cp949")
 # print(result_1)
 # #result_1.to_csv('공원별 총 운동기구 설치 수.csv', encoding='utf-8')  # 저장
 
-# result_2 = df.groupby('운동기구 기종명')['운동기구 수량'].sum()
+# result_2 = df.groupby('운동기구 기종명')['운동기구 수량'].sum()#.value_counts()
 # print(result_2)
 
 # result_3 = df.groupby('관리기관')['운동기구 수량'].sum()

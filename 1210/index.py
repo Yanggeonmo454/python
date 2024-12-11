@@ -90,7 +90,7 @@ categories = ['Category 1', 'Category 2',
               'Category 3', 'Category 4', 'Category 5']
 data = [20, 35, 15, 27, 45]
 
-plt.figure(figsize=(10, 10))
+#plt.figure(figsize=(10, 10)) 10inch 10inch
 plt.bar(categories, data)
 
 plt.grid(True)

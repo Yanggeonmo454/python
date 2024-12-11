@@ -117,3 +117,6 @@ categories = ['Apple', 'Banana', 'Melon', 'Grape']
 values = [34, 32, 16, 18]
 plt.barh(categories, values, color="blue")
 plt.show()
+
+#저장
+#plt.savefig("./1209/graph.jpg", format = "jpg")
