@@ -222,4 +222,4 @@ while cap.isOpened():
 cap.release()
 # out.release()
 cv2.destroyAllWindows()
-plt.close()
+plt.ioff()  # 인터랙티브 모드 종료
