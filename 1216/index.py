@@ -185,6 +185,8 @@ gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 _, binary_img = cv2.threshold(gray_image, 120, 255, cv2.THRESH_BINARY)
 
+# adaptiveThreshold(): 조명에 대응이 쉬움
+
 # Tesseract로 텍스트 추출
 text = pytesseract.image_to_string(
     binary_img, lang="eng")
