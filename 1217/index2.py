@@ -1,6 +1,7 @@
 import folium
 import requests
 import pandas as pd
+from folium.plugins import HeatMap
 
 API_KEY = "347624de9c4ee8ab325446ce279950e1"
 
