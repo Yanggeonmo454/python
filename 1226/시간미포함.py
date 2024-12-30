@@ -12,15 +12,15 @@ data['일시'] = pd.to_datetime(data['일시'])
 data['Temperature'] = data['기온(°C)']  # 기온 컬럼 이름이 다를 경우 수정 필요
 data['Power Demand'] = data['발전수요량']  # 발전수요량 컬럼 이름이 다를 경우 수정 필요
 
-# 기간 설정 (예시: 2023년 1월 1일부터 2023년 1월 31일까지)
+# 기간 설정 (예시: 2023년 7월 1일부터 2023년 7월 31일까지)
 start_date = '2023-01-01'
 end_date = '2023-01-31'
 mask = (data['일시'] >= start_date) & (data['일시'] <= end_date)
 filtered_data = data[mask]
 
 # 사용자 설정 기온 범위
-min_temp = 10  # 사용자가 입력한 최소 기온
-max_temp = 11  # 사용자가 입력한 최대 기온
+min_temp = 27  # 사용자가 입력한 최소 기온
+max_temp = 28  # 사용자가 입력한 최대 기온
 
 # 설정한 기온 범위에 해당하는 데이터 필터링
 filtered_temp_data = filtered_data[(filtered_data['Temperature'] >= min_temp) & (
@@ -50,6 +50,18 @@ filtered_temp_data_holiday['MAPE'] = calculate_mape(
     filtered_temp_data_holiday['Power Demand'], filtered_temp_data_holiday['Predicted'])
 filtered_temp_data_non_holiday['MAPE'] = calculate_mape(
     filtered_temp_data_non_holiday['Power Demand'], filtered_temp_data_non_holiday['Predicted'])
+
+# 휴일과 비휴일 데이터를 합침
+final_data = pd.concat([filtered_temp_data_holiday[['일시', 'Power Demand', 'Predicted', 'MAPE']],
+                        filtered_temp_data_non_holiday[['일시', 'Power Demand', 'Predicted', 'MAPE']]])
+
+# MAPE 기준으로 정렬
+final_data_sorted = final_data.sort_values(by='MAPE', ascending=False)
+
+# 결과를 CSV로 저장 (파일명에 start_date 사용)
+start_date_str = start_date.replace('-', '_')  # 파일명에 사용하기 위해 날짜 형식을 수정
+final_data_sorted.to_csv(
+    f'./final_data_{start_date_str}.csv', index=False, encoding='euc-kr')
 
 # 전체 MAPE 출력
 holiday_mape = filtered_temp_data_holiday['MAPE'].mean()
