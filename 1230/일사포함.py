@@ -20,10 +20,10 @@ mask = (data['일시'] >= start_date) & (data['일시'] <= end_date)
 filtered_data = data[mask]
 
 # 사용자 설정 기온 및 일사 범위
-min_temp = 3.5  # 사용자가 입력한 최소 기온
-max_temp = 4.5  # 사용자가 입력한 최대 기온
-min_solar = 0  # 사용자가 입력한 최소 일사
-max_solar = 0.5  # 사용자가 입력한 최대 일사
+min_temp = -60  # 사용자가 입력한 최소 기온
+max_temp = 60  # 사용자가 입력한 최대 기온
+min_solar = 1  # 사용자가 입력한 최소 일사
+max_solar = 2  # 사용자가 입력한 최대 일사
 
 # 기온과 일사량 모두 기준을 만족하는 데이터 필터링
 filtered_data = filtered_data[
