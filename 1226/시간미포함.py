@@ -19,8 +19,8 @@ mask = (data['일시'] >= start_date) & (data['일시'] <= end_date)
 filtered_data = data[mask]
 
 # 사용자 설정 기온 범위
-min_temp = 27  # 사용자가 입력한 최소 기온
-max_temp = 28  # 사용자가 입력한 최대 기온
+min_temp = 10  # 사용자가 입력한 최소 기온
+max_temp = 10.5  # 사용자가 입력한 최대 기온
 
 # 설정한 기온 범위에 해당하는 데이터 필터링
 filtered_temp_data = filtered_data[(filtered_data['Temperature'] >= min_temp) & (

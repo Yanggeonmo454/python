@@ -70,7 +70,7 @@ final_data_sorted.to_csv('./final_data_sorted.csv',
 
 print("CSV 파일이 MAPE 순으로 정렬되어 저장되었습니다.")
 
-print(final_data)
+print(final_data.head())
 
 # 평균 MAPE 계산
 holiday_avg_mape = holiday_data['MAPE'].mean()
